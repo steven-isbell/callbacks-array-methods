@@ -11,6 +11,10 @@ describe('includes', () => {
   test('It should return false if the item is not in the target array', () => {
     expect(includes(arr, 5)).toBeFalsy();
   });
+  test('It should work without the native method', () => {
+    arr.includes = null;
+    expect(includes(arr, 2)).toBeTruthy();
+  });
 });
 
 describe('indexOf', () => {

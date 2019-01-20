@@ -2,6 +2,7 @@ const { filter, forEach, includes, indexOf, map, reduce } = require('../index');
 
 describe('includes', () => {
   const arr = [1, 2, 3];
+  arr.includes = null;
   test('includes should exist', () => {
     expect(includes).toBeDefined();
   });
@@ -11,14 +12,11 @@ describe('includes', () => {
   test('It should return false if the item is not in the target array', () => {
     expect(includes(arr, 5)).toBeFalsy();
   });
-  test('It should work without the native method', () => {
-    arr.includes = null;
-    expect(includes(arr, 2)).toBeTruthy();
-  });
 });
 
 describe('indexOf', () => {
   const arr = [1, 2, 3];
+  arr.includes = null;
   test('indexOf should exist', () => {
     expect(indexOf).toBeDefined();
   });
@@ -32,6 +30,7 @@ describe('indexOf', () => {
 
 describe('forEach', () => {
   const arr = [1, 2, 3];
+  arr.includes = null;
   const mock = jest.fn();
   test('forEach should exist', () => {
     expect(forEach).toBeDefined();
@@ -52,6 +51,7 @@ describe('forEach', () => {
 
 describe('map', () => {
   const arr = [1, 2, 3];
+  arr.map = null;
   const mock = jest.fn();
   test('map should exist', () => {
     expect(map).toBeDefined();
@@ -73,6 +73,7 @@ describe('map', () => {
 
 describe('filter', () => {
   const arr = [1, 2, 3];
+  arr.filter = null;
   const mock = jest.fn();
   test('filter should exist', () => {
     expect(filter).toBeDefined();
@@ -93,6 +94,7 @@ describe('filter', () => {
 
 describe('reduce', () => {
   const arr = [1, 2, 3];
+  arr.reduce = null;
   const mock = jest.fn();
   test('reduce should exist', () => {
     expect(reduce).toBeDefined();
